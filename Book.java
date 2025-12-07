@@ -1,51 +1,31 @@
 public class Book {
-    private String isbn;
+    private String id;
     private String title;
     private String author;
     private int year;
     private boolean available;
 
-    public Book(String isbn, String title, String author, int year) {
-        this.isbn = isbn;
+    public Book(String id, String title, String author, int year) {
+        this.id = id;
         this.title = title;
         this.author = author;
         this.year = year;
-        this.available = true;
+        this.available = true; // default tersedia
     }
 
-    public String getIsbn() {
-        return isbn;
-    }
+    public String getId() { return id; }
+    public String getTitle() { return title; }
+    public String getAuthor() { return author; }
+    public int getYear() { return year; }
+    public boolean isAvailable() { return available; }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public boolean isAvailable() {
-        return available;
-    }
-
-    public void borrowBook() {
-        if (available) {
-            available = false;
-        }
-    }
-
-    public void returnBook() {
-        available = true;
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 
     @Override
     public String toString() {
-        return isbn + " | " + title + " | " + author + " | " + year + " | " +
-               (available ? "Available" : "Not Available");
+        return id + " | " + title + " | " + author + " | " + year + " | "
+                + (available ? "Available" : "Not Available");
     }
 }
