@@ -1,0 +1,34 @@
+public class TestProgram {
+    public static void main(String[] args) {
+
+        Library library = new Library();
+
+        library.addBook(new Book("001", "Pemrograman Java", "Andi", 2019));
+        library.addBook(new Book("002", "Struktur Data", "Budi", 2020));
+
+        library.addMember(new Member("M01", "Hana"));
+        library.addMember(new Member("M02", "Naura"));
+
+        System.out.println("\n=== BOOK LIST ===");
+        library.showBooks();
+
+        System.out.println("\n=== MEMBER LIST ===");
+        library.showMembers();
+
+        System.out.println("\nBorrowing book 001 by member M01...");
+        if (library.borrowBook("001", "M01"))
+            System.out.println("Success!");
+        else
+            System.out.println("Failed!");
+
+        library.showBooks();
+
+        System.out.println("\nReturning book 001...");
+        if (library.returnBook("001"))
+            System.out.println("Returned successfully!");
+        else
+            System.out.println("Failed!");
+
+        library.showBooks();
+    }
+}
