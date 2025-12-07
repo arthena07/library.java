@@ -1,2 +1,3 @@
-Nama : Mazaya Hana Naura
-ProgStudy : Informatika
+Nama        : Mazaya Hana Naura
+NIM         : 100332520039
+ProgStudy   : Informatika
